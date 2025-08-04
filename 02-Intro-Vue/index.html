@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="myApp2">
+      <h1>Batman quotes</h1>
+      <hr />
+      <ul>
+        <li v-for="({quote, author},index) in quotes">
+          <span>{{index + 1}} - </span>
+          <span> {{quote}} </span>
+          <blockquote>- {{author}}</blockquote>
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
