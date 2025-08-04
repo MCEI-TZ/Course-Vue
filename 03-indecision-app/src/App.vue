@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-
-const count = ref(0);
-const squareCounter = computed(() => count.value * count.value);
+import MyCounter from './components/MyCounter.vue';
 </script>
 
 <template>
-  <section>
-    <h3>Counter: {{ count }}</h3>
-    <h3>Square: {{ squareCounter }}</h3>
-  </section>
-  <div>
-    <button @click="count++">+1</button>
-    <button @click="count--">-1</button>
-  </div>
+  <h1>My fisrt app in Vue</h1>
+  <hr />
+  <MyCounter :valueProps="1" />
 </template>
