@@ -13,9 +13,22 @@
         <li v-for="({quote, author},index) in quotes">
           <span>{{index + 1}} - </span>
           <span> {{quote}} </span>
-          <blockquote>- {{author}}</blockquote>
+          <br />
+          <!--? With v-if we can create a conditional rendering -->
+          <blockquote v-if="showAuthor">- {{author}}</blockquote>
+
+          <!-- But a v-show will always exists but just change the style for
+          don't show the element -->
+          <p v-show="showAuthor">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi
+            perspiciatis similique exercitationem deleniti recusandae,
+            repudiandae nulla praesentium voluptates nesciunt voluptatem
+            voluptatibus inventore. Porro ipsa esse, labore eligendi ratione ea
+            nulla?
+          </p>
         </li>
       </ul>
+      <button v-on:click="showAuthor = !showAuthor">Mostrar author</button>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="/app.js"></script>
