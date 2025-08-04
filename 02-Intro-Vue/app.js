@@ -36,9 +36,11 @@ const app = createApp({
 
     const quotes = ref(Originalquotes);
 
+    const newMessage = ref("");
+
     const addQuote = () => {
       quotes.value.push({
-        quote: "Hello World",
+        quote: newMessage.value,
         author: "Mexz",
       });
     };
@@ -46,6 +48,7 @@ const app = createApp({
       quotes,
       showAuthor,
       addQuote,
+      newMessage,
     };
   },
 });
