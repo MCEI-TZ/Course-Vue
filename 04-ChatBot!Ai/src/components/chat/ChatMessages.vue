@@ -3,16 +3,16 @@
     <div class="flex flex-col space-y-2">
       <!-- Messages go here -->
       <!-- Example Message -->
-      <ChatBubble :is-mine="true" :message="'Hey there°'" />
-      <ChatBubble
-        :is-mine="false"
-        :message="'no'"
-        :image="'https://yesno.wtf/assets/no/3-80a6f5b5d6684674bcfeda34accca4e1.gif'"
-      />
+      <ChatBubble v-for="message in messages" :key="message.id" v-bind="message" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import ChatBubble from './ChatBubble.vue'
+import type { ChatMessage } from '@/interfaces/chatmessages.interfaces';
+import ChatBubble from './ChatBubble.vue';
+interface Props {
+  messages: ChatMessage[];
+}
+defineProps<Props>();
 </script>
