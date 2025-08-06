@@ -3,16 +3,16 @@
     <div class="flex flex-col space-y-2">
       <!-- Messages go here -->
       <!-- Example Message -->
-      <div class="flex justify-end">
-        <div class="bg-blue-200 text-black p-2 rounded-lg max-w-xs">Hey, how's your day going?</div>
-      </div>
-
-      <!-- Example Received Message -->
-      <div class="flex">
-        <div class="bg-gray-300 text-black p-2 rounded-lg max-w-xs">
-          Not too bad, just a bit busy. How about you?
-        </div>
-      </div>
+      <ChatBubble :is-mine="true" :message="'Hey there°'" />
+      <ChatBubble
+        :is-mine="false"
+        :message="'no'"
+        :image="'https://yesno.wtf/assets/no/3-80a6f5b5d6684674bcfeda34accca4e1.gif'"
+      />
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import ChatBubble from './ChatBubble.vue'
+</script>
