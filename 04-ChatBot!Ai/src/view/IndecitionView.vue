@@ -5,7 +5,7 @@
       <span>Mi esposa</span>
     </div>
     <ChatMessages :messages="messages" />
-    <MessageBox />
+    <MessageBox @send-message="onMessage" />
   </div>
 </template>
 
@@ -33,4 +33,12 @@ const messages = ref<ChatMessage[]>([
     image: 'https://yesno.wtf/assets/no/3-80a6f5b5d6684674bcfeda34accca4e1.gif',
   },
 ]);
+
+const onMessage = (text: string) => {
+  messages.value.push({
+    id: new Date().getTime(),
+    itsMine: true,
+    message: text,
+  });
+};
 </script>
